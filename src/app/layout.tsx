@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange={false}
         >
+          <Analytics />
           <div className="absolute top-6 right-6 z-10">
             <ThemeToggle />
           </div>
