@@ -1,0 +1,158 @@
+{
+  "personal": {
+    "name": "Miled Ameur",
+    "title": "Full-stack developer passionate about creating beautiful, functional web experiences. Building the future, one line of code at a time.",
+    "location": "Tunisia",
+    "email": "miled.ameur@example.com",
+    "responseTime": "Within 24 hours",
+    "experience": "2+",
+    "status": "Available for new projects"
+  },
+  "social": {
+    "github": "https://github.com/miledameur",
+    "linkedin": "https://linkedin.com/in/miledameur"
+  },
+  "technologies": [
+    { "name": "Vue.js", "icon": "VueJS", "color": "text-green-500" },
+    {
+      "name": "Next.js",
+      "icon": "NextJS",
+      "color": "text-black dark:text-white"
+    },
+    { "name": "Laravel", "icon": "Laravel", "color": "text-red-500" },
+    { "name": "TypeScript", "icon": "TypeScript", "color": "text-blue-600" },
+    { "name": "PostgreSQL", "icon": "PostgreSQL", "color": "text-blue-700" },
+    { "name": "mySQL", "icon": "MySQL", "color": "text-yellow-600" },
+    { "name": "sanity", "icon": "Sanit", "color": "text-purple-600" }
+  ],
+  "projects": [
+    {
+      "name": "Atoll Palme's Internal Marketplace",
+      "description": "Led the development of an internal marketplace platform with advanced functionality and seamless user experience.",
+      "technologies": ["Next.js", "TypeScript", "PostgreSQL"],
+      "type": "Professional"
+    },
+    {
+      "name": "CreditWiin / 2lCourtage CRM",
+      "description": "Developed a comprehensive CRM system with role-based permissions and dynamic document generation capabilities.",
+      "technologies": ["Next.js", "TypeScript", "PostgreSQL"],
+      "metrics": "40% reduction in runtime errors",
+      "type": "Professional"
+    },
+    {
+      "name": "Batigo CRM Enhancement",
+      "description": "Enhanced legacy CRM system, improving functionality and user experience while boosting performance significantly.",
+      "technologies": ["Vue.js", "Laravel", "mySQL"],
+      "metrics": "70% performance improvement",
+      "type": "Professional"
+    },
+    {
+      "name": "ShelfSuccess Blog",
+      "description": "Built and launched a successful blog platform with newsletter integration and content management system.",
+      "technologies": ["Next.js", "TypeScript", "sanity"],
+      "metrics": "10K+ monthly visitors, 1K+ subscribers",
+      "type": "Freelance"
+    },
+    {
+      "name": "Tictacpneu E-commerce",
+      "description": "Contributed to a large-scale e-commerce platform supporting thousands of users and extensive product catalog.",
+      "technologies": ["Next.js", "TypeScript", "PostgreSQL"],
+      "metrics": "5K+ monthly users, 1K+ products",
+      "type": "Freelance"
+    },
+    {
+      "name": "Invoice & Quote SaaS",
+      "description": "Built a comprehensive SaaS tool for automated document generation with flexible template system.",
+      "technologies": ["Next.js", "TypeScript", "PostgreSQL"],
+      "metrics": "50+ clients, 1K+ documents monthly",
+      "type": "Freelance"
+    },
+    {
+      "name": "Real-time Stock Tracking",
+      "description": "Implemented a custom stock management system with real-time updates across delivery and inventory operations.",
+      "technologies": ["Next.js", "TypeScript", "PostgreSQL"],
+      "type": "Freelance"
+    }
+  ],
+  "about": {
+    "developer": {
+      "title": "The Developer",
+      "content": [
+        "I'm a passionate full-stack developer with over 2 years of experience building web applications that make a difference. My journey in tech started with curiosity and has evolved into a love for creating beautiful, functional experiences.",
+        "I specialize in modern web technologies like Vue.js, TypeScript, and Laravel, and I've had the privilege of working on everything from internal marketplaces to CRM systems that serve thousands of users.",
+        "What drives me is the ability to solve real problems through code and see the impact of my work in the real world.",
+        "When I'm not coding, I believe in continuous learning and staying up-to-date with the latest technologies and best practices. The tech world moves fast, and I love being part of that evolution."
+      ]
+    },
+    "interests": {
+      "title": "Interests",
+      "content": [
+        {
+          "title": "Motorcycle Riding",
+          "description": "Love the freedom of the open road and the thrill of two wheels",
+          "icon": "Bike",
+          "color": "text-orange-500"
+        },
+        {
+          "title": "Action/Adventure Games",
+          "description": "Immersive storytelling and epic adventures are my escape",
+          "icon": "Gamepad2",
+          "color": "text-blue-500"
+        },
+        {
+          "title": "Cinema",
+          "description": "Passionate about great storytelling through the art of film",
+          "icon": "Film",
+          "color": "text-purple-500"
+        }
+      ]
+    },
+    "philosophy": [
+      "I believe that great software is built by people who understand that technology is ultimately about human connection.",
+      "Whether I'm debugging code at 2 AM, exploring winding mountain roads on my motorcycle, getting lost in an epic game narrative, or being moved by a powerful film, I'm always seeking experiences that challenge me and broaden my perspective.",
+      "These diverse interests fuel my creativity and problem-solving approach in development. The storytelling techniques I admire in games and cinema influence how I think about user experience, while the focus and precision required in motorcycle riding translates to writing clean, efficient code."
+    ]
+  },
+  "contact": [
+    {
+      "title": "Email",
+      "description": "Drop me a line anytime",
+      "value": "miled.ameur@example.com",
+      "href": "mailto:miled.ameur@example.com",
+      "icon": "Mail",
+      "color": "text-blue-500"
+    },
+    {
+      "title": "Let's Chat",
+      "description": "Quick questions or project discussions",
+      "value": "Schedule a call",
+      "href": "#",
+      "icon": "MessageSquare",
+      "color": "text-green-500"
+    },
+    {
+      "title": "Location",
+      "description": "Based in",
+      "value": "Tunisia",
+      "href": "#",
+      "icon": "MapPin",
+      "color": "text-red-500"
+    },
+    {
+      "title": "Response Time",
+      "description": "I typically respond within",
+      "value": "24 hours",
+      "href": "#",
+      "icon": "Clock",
+      "color": "text-purple-500"
+    }
+  ],
+  "stats": {
+    "projectsDelivered": "7+",
+    "usersReached": "15K+",
+    "performanceImprovement": "70%",
+    "yearsExperience": "2+",
+    "technologiesMastered": "6",
+    "errorReduction": "40%"
+  }
+}

@@ -519,7 +519,7 @@ export default function Terminal() {
 
   const executeCommand = (command: string) => {
     const parts = command.trim().split(" ");
-    const cmd = parts[0].toLowerCase();
+    const cmd = (parts[0] ?? "").toLowerCase();
     const args = parts.slice(1);
 
     let output: string[] = [];
