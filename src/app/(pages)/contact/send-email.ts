@@ -13,8 +13,8 @@ export async function send(
   const resend = new Resend(env.RESEND_EMAIL_API_KEY);
 
   await resend.emails.send({
-    from: "onboarding@resend.dev",
-    to: "midou.slm8@gmail.com",
+    from: "contact@miledmedameur.com",
+    to: "m.miled@yahoo.fr",
     subject: "Someone contacted you via portfolio",
     react: ContactMe({ email, content, name, subject }),
   });
