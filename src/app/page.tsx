@@ -1,9 +1,13 @@
 import { FloatingObjects } from "@/components/floating-objects";
 import { Meteors } from "@/components/magicui/meteors";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function HomePage() {
   return (
     <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-violet-50 to-purple-100 px-4 dark:from-violet-950 dark:to-purple-950">
+      <div className="absolute top-6 right-6 z-10">
+        <ThemeToggle />
+      </div>
       <Meteors number={30} />
 
       <div className="z-10 mx-auto max-w-4xl text-center">

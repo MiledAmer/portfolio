@@ -3,7 +3,6 @@ import type React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { Analytics } from "@vercel/analytics/next";
 import { Toaster } from "sonner";
 
@@ -31,9 +30,7 @@ export default function RootLayout({
         >
           <Toaster position="top-right" />
           <Analytics />
-          <div className="absolute top-6 right-6 z-10">
-            <ThemeToggle />
-          </div>
+          
           {children}
         </ThemeProvider>
       </body>
