@@ -76,13 +76,11 @@ const portfolioData = {
       "💬 Preferred Contact: Email",
       "",
       "🔗 Social Links:",
-      ...(
-        socialLinks && typeof socialLinks === "object"
-          ? Object.entries(socialLinks).map(
-              ([name, href]) => `   - ${name}: ${href}`,
-            )
-          : []
-      ),
+      ...(socialLinks && typeof socialLinks === "object"
+        ? Object.entries(socialLinks).map(
+            ([name, href]) => `   - ${name}: ${href}`,
+          )
+        : []),
       "",
       "📞 Available for:",
       "   - Project discussions",
@@ -327,13 +325,121 @@ export default function Terminal() {
   };
 
   return (
-    <div className="min-h-screen bg-black p-4 font-mono text-green-400">
+    <div className="min-h-screen bg-black p-4 font-mono text-green-400 ">
+      <style jsx>{`
+        @keyframes flicker {
+          0%,
+          100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.98;
+          }
+        }
+
+        @keyframes scanlines {
+          0% {
+            transform: translateY(-100%);
+          }
+          100% {
+            transform: translateY(97vh);
+          }
+        }
+
+        @keyframes textGlow {
+          0%,
+          100% {
+            text-shadow:
+              0 0 5px rgba(34, 197, 94, 0.5),
+              0 0 10px rgba(34, 197, 94, 0.3);
+          }
+          50% {
+            text-shadow:
+              0 0 8px rgba(34, 197, 94, 0.8),
+              0 0 15px rgba(34, 197, 94, 0.5);
+          }
+        }
+
+        @keyframes waveDistortion {
+          0%,
+          100% {
+            transform: translateX(0px);
+          }
+          25% {
+            transform: translateX(1px);
+          }
+          50% {
+            transform: translateX(-1px);
+          }
+          75% {
+            transform: translateX(0.5px);
+          }
+        }
+
+        .crt-screen {
+          animation:
+            flicker 0.15s infinite linear alternate,
+            waveDistortion 0.1s infinite linear;
+          background:
+            radial-gradient(
+              ellipse at center,
+              transparent 0%,
+              rgba(0, 0, 0, 0.1) 100%
+            ),
+            linear-gradient(90deg, transparent 50%, rgba(34, 197, 94, 0.03) 50%);
+          background-size:
+            100% 100%,
+            4px 4px;
+        }
+
+        .crt-screen::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(
+            transparent 50%,
+            rgba(34, 197, 94, 0.05) 50%
+          );
+          background-size: 100% 4px;
+          pointer-events: none;
+          z-index: 1;
+        }
+
+        .crt-screen::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(34, 197, 94, 0.8),
+            transparent
+          );
+          animation: scanlines 2s linear infinite;
+          pointer-events: none;
+          z-index: 2;
+        }
+
+        .crt-text {
+          animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        .terminal-content {
+          animation: waveDistortion 0.08s infinite linear;
+        }
+      `}</style>
       {/* Header */}
       <div className="mb-4 flex items-center justify-between">
         <div className="flex items-center gap-4">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-green-400 transition-colors duration-200 hover:text-green-300"
+            className="inline-flex items-center gap-2 text-green-400 transition-colors duration-200 hover:text-green-300 "
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Portfolio
@@ -349,18 +455,18 @@ export default function Terminal() {
 
       {/* Terminal */}
       <div
-        className="h-[calc(100vh-120px)] cursor-text overflow-y-auto rounded-lg bg-gray-900 p-4"
+        className="h-[calc(100vh-120px)] cursor-text overflow-y-auto rounded-lg p-4 crt-text crt-screen"
         onClick={handleTerminalClick}
         ref={terminalRef}
       >
         {/* Command History */}
         {commandHistory.map((cmd, index) => (
           <div key={index} className="mb-2">
-            {cmd.input && <div className="text-green-300">{cmd.input}</div>}
+            {cmd.input && <div className="text-green-300 crt-text">{cmd.input}</div>}
             {cmd.output.map((line, lineIndex) => (
               <div
                 key={lineIndex}
-                className="whitespace-pre-wrap text-green-400"
+                className="whitespace-pre-wrap text-green-400 crt-text"
               >
                 {line}
               </div>
@@ -370,14 +476,15 @@ export default function Terminal() {
 
         {/* Current Input */}
         <div className="flex items-center">
-          <span className="mr-2 text-green-300">{currentPath}$</span>
+          <span className="mr-2 text-green-300 crt-text">{currentPath}$</span>
           <input
             ref={inputRef}
             type="text"
             value={currentInput}
             onChange={(e) => setCurrentInput(e.target.value)}
             onKeyPress={handleKeyPress}
-            className="flex-1 border-none bg-transparent font-mono text-green-400 outline-none"
+            className="flex-1 border-none bg-transparent font-mono text-green-400 outline-none crt-text"
+            placeholder="Enter command..."
             autoFocus
           />
           <span className="animate-pulse text-green-400">█</span>
