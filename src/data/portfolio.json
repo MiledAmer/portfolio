@@ -77,41 +77,24 @@
   "about": {
     "developer": {
       "title": "The Developer",
+      "icon": "Code2",
+      "iconClassName": "h-6 w-6 text-violet-600 dark:text-violet-400",
       "content": [
         "I'm a passionate full-stack developer with over 2 years of experience building web applications that make a difference. My journey in tech started with curiosity and has evolved into a love for creating beautiful, functional experiences.",
-        "I specialize in modern web technologies like Vue.js, TypeScript, and Laravel, and I've had the privilege of working on everything from internal marketplaces to CRM systems that serve thousands of users.",
-        "What drives me is the ability to solve real problems through code and see the impact of my work in the real world.",
+        "I specialize in modern web technologies like Vue.js, TypeScript, and Laravel, and I've had the privilege of working on everything from internal marketplaces to CRM systems that serve thousands of users. What drives me is the ability to solve real problems through code and see the impact of my work in the real world.",
         "When I'm not coding, I believe in continuous learning and staying up-to-date with the latest technologies and best practices. The tech world moves fast, and I love being part of that evolution."
       ]
     },
-    "interests": {
-      "title": "Interests",
+    "philosophy": {
+      "title": "My Philosophy",
+      "icon": "Coffee",
+      "iconClassName": "h-6 w-6 text-violet-600 dark:text-violet-400",
+
       "content": [
-        {
-          "title": "Motorcycle Riding",
-          "description": "Love the freedom of the open road and the thrill of two wheels",
-          "icon": "Bike",
-          "color": "text-orange-500"
-        },
-        {
-          "title": "Action/Adventure Games",
-          "description": "Immersive storytelling and epic adventures are my escape",
-          "icon": "Gamepad2",
-          "color": "text-blue-500"
-        },
-        {
-          "title": "Cinema",
-          "description": "Passionate about great storytelling through the art of film",
-          "icon": "Film",
-          "color": "text-purple-500"
-        }
+        "I believe that great software is built by people who understand that technology is ultimately about human connection. Whether I'm debugging code at 2 AM, exploring winding mountain roads on my motorcycle, getting lost in an epic game narrative, or being moved by a powerful film, I'm always seeking experiences that challenge me and broaden my perspective.",
+        "These diverse interests fuel my creativity and problem-solving approach in development. The storytelling techniques I admire in games and cinema influence how I think about user experience, while the focus and precision required in motorcycle riding translates to writing clean, efficient code."
       ]
-    },
-    "philosophy": [
-      "I believe that great software is built by people who understand that technology is ultimately about human connection.",
-      "Whether I'm debugging code at 2 AM, exploring winding mountain roads on my motorcycle, getting lost in an epic game narrative, or being moved by a powerful film, I'm always seeking experiences that challenge me and broaden my perspective.",
-      "These diverse interests fuel my creativity and problem-solving approach in development. The storytelling techniques I admire in games and cinema influence how I think about user experience, while the focus and precision required in motorcycle riding translates to writing clean, efficient code."
-    ]
+    }
   },
   "contact": [
     {

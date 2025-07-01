@@ -19,12 +19,13 @@ export type Project = {
 export type Section<T> = {
   title?: string;
   content?: T;
+  icon: string;
+  iconClassName: string;
 };
 
 export type About = {
   developer: Section<string[]>;
-  interests: Section<Interest[]>;
-  philosophy: string[];
+  philosophy: Section<string[]>;
 };
 
 export type Developer = {

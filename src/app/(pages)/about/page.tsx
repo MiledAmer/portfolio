@@ -8,6 +8,7 @@ import {
   Coffee,
   Heart,
 } from "lucide-react";
+import { getAboutInfo } from "@/lib/portfolio-data";
 
 const interests = [
   {
@@ -32,6 +33,7 @@ const interests = [
 ];
 
 export default function About() {
+  const AboutInfo = getAboutInfo();
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-50 to-purple-100 px-4 py-12 dark:from-violet-950 dark:to-purple-950">
       <div className="mx-auto max-w-7xl">
@@ -60,30 +62,13 @@ export default function About() {
                 <Code2 className="h-6 w-6 text-violet-600 dark:text-violet-400" />
               </div>
               <h2 className="text-2xl font-bold text-violet-900 dark:text-violet-100">
-                The Developer
+                {AboutInfo.developer.title}
               </h2>
             </div>
             <div className="space-y-4 leading-relaxed text-violet-700 dark:text-violet-300">
-              <p>
-                I&apos;m a passionate full-stack developer with over 2 years of
-                experience building web applications that make a difference. My
-                journey in tech started with curiosity and has evolved into a
-                love for creating beautiful, functional experiences.
-              </p>
-              <p>
-                I specialize in modern web technologies like Vue.js, TypeScript,
-                and Laravel, and I&apos;ve had the privilege of working on
-                everything from internal marketplaces to CRM systems that serve
-                thousands of users. What drives me is the ability to solve real
-                problems through code and see the impact of my work in the real
-                world.
-              </p>
-              <p>
-                When I&apos;m not coding, I believe in continuous learning and
-                staying up-to-date with the latest technologies and best
-                practices. The tech world moves fast, and I love being part of
-                that evolution.
-              </p>
+              {AboutInfo.developer.content?.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
             </div>
           </div>
 
@@ -127,25 +112,15 @@ export default function About() {
                 <Coffee className="h-6 w-6 text-violet-600 dark:text-violet-400" />
               </div>
               <h2 className="text-2xl font-bold text-violet-900 dark:text-violet-100">
-                My Philosophy
+                {AboutInfo.philosophy.title}
               </h2>
             </div>
             <div className="leading-relaxed text-violet-700 dark:text-violet-300">
-              <p>
-                I believe that great software is built by people who understand
-                that technology is ultimately about human connection. Whether
-                I&apos;m debugging code at 2 AM, exploring winding mountain
-                roads on my motorcycle, getting lost in an epic game narrative,
-                or being moved by a powerful film, I&apos;m always seeking
-                experiences that challenge me and broaden my perspective.
-              </p>
-              <p className="mt-4">
-                These diverse interests fuel my creativity and problem-solving
-                approach in development. The storytelling techniques I admire in
-                games and cinema influence how I think about user experience,
-                while the focus and precision required in motorcycle riding
-                translates to writing clean, efficient code.
-              </p>
+              {AboutInfo.philosophy.content?.map((paragraph, index) => (
+                <p key={index} className="mb-4">
+                  {paragraph}
+                </p>
+              ))}
             </div>
           </div>
 
