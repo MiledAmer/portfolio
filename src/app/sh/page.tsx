@@ -113,9 +113,8 @@ const portfolioData = {
     ],
   },
   "/resume": {
-    type: "directory",
+    type: "file",
     content: ["summary.txt", "experience.txt", "education.txt"],
-    description: "Professional Resume",
   },
 };
 
@@ -248,6 +247,20 @@ export default function Terminal() {
           } else if (targetDir === "/") {
             setCurrentPath("/");
             output = ["Changed to root directory"];
+          } else if (targetDir === "resume") {
+            // Special case: trigger resume download
+            const link = document.createElement("a");
+            link.href = "/miled_resume.pdf";
+            link.download = "Miled_Ameur_Resume.pdf";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            output = [
+              "📄 Downloading resume...",
+              "Resume download initiated: Miled_Ameur_Resume.pdf",
+              "",
+              "Thank you for your interest in my profile!",
+            ];
           } else {
             newPath =
               currentPath === "/"
