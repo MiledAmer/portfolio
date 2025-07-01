@@ -3,14 +3,14 @@
     "name": "Miled Ameur",
     "title": "Full-stack developer passionate about creating beautiful, functional web experiences. Building the future, one line of code at a time.",
     "location": "Tunisia",
-    "email": "miled.ameur@example.com",
+    "email": "m.miled@yahoo.fr",
     "responseTime": "Within 24 hours",
     "experience": "2+",
     "status": "Available for new projects"
   },
   "social": {
-    "github": "https://github.com/miledameur",
-    "linkedin": "https://linkedin.com/in/miledameur"
+    "github": "https://github.com/MiledAmer",
+    "linkedin": "https://www.linkedin.com/in/mohamed-miled-b7b561287/"
   },
   "technologies": [
     { "name": "Vue.js", "icon": "VueJS", "color": "text-green-500" },
@@ -28,12 +28,14 @@
   "projects": [
     {
       "name": "Atoll Palme's Internal Marketplace",
+      "filename": "atoll-marketplace.txt",
       "description": "Led the development of an internal marketplace platform with advanced functionality and seamless user experience.",
       "technologies": ["Next.js", "TypeScript", "PostgreSQL"],
       "type": "Professional"
     },
     {
       "name": "CreditWiin / 2lCourtage CRM",
+      "filename": "creditwiin-crm.txt",
       "description": "Developed a comprehensive CRM system with role-based permissions and dynamic document generation capabilities.",
       "technologies": ["Next.js", "TypeScript", "PostgreSQL"],
       "metrics": "40% reduction in runtime errors",
@@ -41,6 +43,7 @@
     },
     {
       "name": "Batigo CRM Enhancement",
+      "filename": "batigo-crm.txt",
       "description": "Enhanced legacy CRM system, improving functionality and user experience while boosting performance significantly.",
       "technologies": ["Vue.js", "Laravel", "mySQL"],
       "metrics": "70% performance improvement",
@@ -48,6 +51,7 @@
     },
     {
       "name": "ShelfSuccess Blog",
+      "filename": "shelfsuccess-blog.txt",
       "description": "Built and launched a successful blog platform with newsletter integration and content management system.",
       "technologies": ["Next.js", "TypeScript", "sanity"],
       "metrics": "10K+ monthly visitors, 1K+ subscribers",
@@ -55,6 +59,7 @@
     },
     {
       "name": "Tictacpneu E-commerce",
+      "filename": "tictacpneu-ecommerce.txt",
       "description": "Contributed to a large-scale e-commerce platform supporting thousands of users and extensive product catalog.",
       "technologies": ["Next.js", "TypeScript", "PostgreSQL"],
       "metrics": "5K+ monthly users, 1K+ products",
@@ -62,6 +67,7 @@
     },
     {
       "name": "Invoice & Quote SaaS",
+      "filename": "invoice-saas.txt",
       "description": "Built a comprehensive SaaS tool for automated document generation with flexible template system.",
       "technologies": ["Next.js", "TypeScript", "PostgreSQL"],
       "metrics": "50+ clients, 1K+ documents monthly",
@@ -69,6 +75,7 @@
     },
     {
       "name": "Real-time Stock Tracking",
+      "filename": "stock-tracking.txt",
       "description": "Implemented a custom stock management system with real-time updates across delivery and inventory operations.",
       "technologies": ["Next.js", "TypeScript", "PostgreSQL"],
       "type": "Freelance"

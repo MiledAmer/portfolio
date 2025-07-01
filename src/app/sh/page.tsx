@@ -5,203 +5,40 @@ import type React from "react";
 import { useState, useEffect, useRef } from "react";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import {
+  getAboutInfo,
+  getPersonalInfo,
+  getProjects,
+  getSocialLinks,
+} from "@/lib/portfolio-data";
 
 interface Command {
   input: string;
   output: string[];
 }
 
+const projects = getProjects();
+const about = getAboutInfo();
+const personalInfo = getPersonalInfo();
+const socialLinks = getSocialLinks();
+
 const portfolioData = {
   "/": {
     type: "directory",
-    content: ["projects", "about", "contact", "blog", "resume"],
+    content: ["projects", "about", "contact", "resume"],
     description: "Miled Ameur's Portfolio - Root Directory",
   },
   "/projects": {
     type: "directory",
-    content: [
-      "atoll-marketplace.txt",
-      "creditwiin-crm.txt",
-      "batigo-crm.txt",
-      "shelfsuccess-blog.txt",
-      "tictacpneu-ecommerce.txt",
-      "invoice-saas.txt",
-      "stock-tracking.txt",
-    ],
+    content: projects.map((project) => project.filename),
     description: "My Development Projects",
-  },
-  "/projects/atoll-marketplace.txt": {
-    type: "file",
-    content: [
-      "=== Atoll Palme's Internal Marketplace ===",
-      "",
-      "Type: Professional",
-      "Technologies: Vue.js, Laravel, TypeScript",
-      "",
-      "Description:",
-      "Led the development of an internal marketplace platform with",
-      "advanced functionality and seamless user experience.",
-      "",
-      "Key Features:",
-      "- Advanced search and filtering",
-      "- User role management",
-      "- Real-time notifications",
-      "- Responsive design",
-    ],
-  },
-  "/projects/creditwiin-crm.txt": {
-    type: "file",
-    content: [
-      "=== CreditWiin / 2lCourtage CRM ===",
-      "",
-      "Type: Professional",
-      "Technologies: TypeScript, Laravel, Vue.js, PostgreSQL",
-      "Metrics: 40% reduction in runtime errors",
-      "",
-      "Description:",
-      "Developed a comprehensive CRM system with role-based permissions",
-      "and dynamic document generation capabilities.",
-      "",
-      "Achievements:",
-      "- Implemented TypeScript for better code quality",
-      "- Built dynamic document generation system",
-      "- Created role-based permission system",
-      "- Reduced runtime errors by 40%",
-    ],
-  },
-  "/projects/batigo-crm.txt": {
-    type: "file",
-    content: [
-      "=== Batigo CRM Enhancement ===",
-      "",
-      "Type: Professional",
-      "Technologies: Vue.js, Laravel",
-      "Metrics: 70% performance improvement",
-      "",
-      "Description:",
-      "Enhanced legacy CRM system, improving functionality and user",
-      "experience while boosting performance significantly.",
-      "",
-      "Key Improvements:",
-      "- Database query optimization",
-      "- Frontend performance enhancements",
-      "- User interface modernization",
-      "- Code refactoring and cleanup",
-    ],
-  },
-  "/projects/shelfsuccess-blog.txt": {
-    type: "file",
-    content: [
-      "=== ShelfSuccess Blog ===",
-      "",
-      "Type: Freelance",
-      "Technologies: Next.js, TypeScript, Sanity",
-      "Metrics: 10K+ monthly visitors, 1K+ subscribers",
-      "",
-      "Description:",
-      "Built and launched a successful blog platform with newsletter",
-      "integration and content management system.",
-      "",
-      "Features:",
-      "- SEO-optimized blog posts",
-      "- Newsletter subscription system",
-      "- Content management with Sanity CMS",
-      "- Responsive design",
-      "- Social media integration",
-    ],
-  },
-  "/projects/tictacpneu-ecommerce.txt": {
-    type: "file",
-    content: [
-      "=== Tictacpneu E-commerce ===",
-      "",
-      "Type: Freelance",
-      "Technologies: Vue.js, Laravel, PostgreSQL",
-      "Metrics: 5K+ monthly users, 1K+ products",
-      "",
-      "Description:",
-      "Contributed to a large-scale e-commerce platform supporting",
-      "thousands of users and extensive product catalog.",
-      "",
-      "Contributions:",
-      "- Product catalog management",
-      "- Shopping cart functionality",
-      "- Payment integration",
-      "- Order management system",
-      "- User account management",
-    ],
-  },
-  "/projects/invoice-saas.txt": {
-    type: "file",
-    content: [
-      "=== Invoice & Quote SaaS ===",
-      "",
-      "Type: SaaS",
-      "Technologies: TypeScript, Next.js, PostgreSQL",
-      "Metrics: 50+ clients, 1K+ documents monthly",
-      "",
-      "Description:",
-      "Built a comprehensive SaaS tool for automated document",
-      "generation with flexible template system.",
-      "",
-      "Features:",
-      "- Automated invoice generation",
-      "- Customizable templates",
-      "- Client management",
-      "- Payment tracking",
-      "- Multi-currency support",
-      "- PDF export functionality",
-    ],
-  },
-  "/projects/stock-tracking.txt": {
-    type: "file",
-    content: [
-      "=== Real-time Stock Tracking ===",
-      "",
-      "Type: SaaS",
-      "Technologies: TypeScript, Next.js, PostgreSQL",
-      "",
-      "Description:",
-      "Implemented a custom stock management system with real-time",
-      "updates across delivery and inventory operations.",
-      "",
-      "Features:",
-      "- Real-time inventory tracking",
-      "- Delivery management",
-      "- Stock alerts and notifications",
-      "- Reporting and analytics",
-      "- Multi-location support",
-    ],
   },
   "/about": {
     type: "directory",
     content: ["developer.txt", "interests.txt", "philosophy.txt"],
     description: "About Miled Ameur",
   },
-  "/about/developer.txt": {
-    type: "file",
-    content: [
-      "=== The Developer ===",
-      "",
-      "I'm a passionate full-stack developer with over 2 years of",
-      "experience building web applications that make a difference.",
-      "My journey in tech started with curiosity and has evolved",
-      "into a love for creating beautiful, functional experiences.",
-      "",
-      "I specialize in modern web technologies like Vue.js,",
-      "TypeScript, and Laravel, and I've had the privilege of",
-      "working on everything from internal marketplaces to CRM",
-      "systems that serve thousands of users.",
-      "",
-      "What drives me is the ability to solve real problems through",
-      "code and see the impact of my work in the real world.",
-      "",
-      "When I'm not coding, I believe in continuous learning and",
-      "staying up-to-date with the latest technologies and best",
-      "practices. The tech world moves fast, and I love being",
-      "part of that evolution.",
-    ],
-  },
+
   "/about/interests.txt": {
     type: "file",
     content: [
@@ -223,26 +60,6 @@ const portfolioData = {
       "translates to writing clean, efficient code.",
     ],
   },
-  "/about/philosophy.txt": {
-    type: "file",
-    content: [
-      "=== My Philosophy ===",
-      "",
-      "I believe that great software is built by people who understand",
-      "that technology is ultimately about human connection.",
-      "",
-      "Whether I'm debugging code at 2 AM, exploring winding mountain",
-      "roads on my motorcycle, getting lost in an epic game narrative,",
-      "or being moved by a powerful film, I'm always seeking experiences",
-      "that challenge me and broaden my perspective.",
-      "",
-      "These diverse interests fuel my creativity and problem-solving",
-      "approach in development. The storytelling techniques I admire",
-      "in games and cinema influence how I think about user experience,",
-      "while the focus and precision required in motorcycle riding",
-      "translates to writing clean, efficient code.",
-    ],
-  },
   "/contact": {
     type: "directory",
     content: ["info.txt", "availability.txt"],
@@ -253,15 +70,19 @@ const portfolioData = {
     content: [
       "=== Contact Information ===",
       "",
-      "📧 Email: miled.ameur@example.com",
+      `📧 Email: ${personalInfo.email}`,
       "📍 Location: Tunisia",
       "⏱️  Response Time: Within 24 hours",
       "💬 Preferred Contact: Email",
       "",
       "🔗 Social Links:",
-      "   GitHub: https://github.com/miledameur",
-      "   LinkedIn: https://linkedin.com/in/miledameur",
-      "   Twitter: https://twitter.com/miledameur",
+      ...(
+        socialLinks && typeof socialLinks === "object"
+          ? Object.entries(socialLinks).map(
+              ([name, href]) => `   - ${name}: ${href}`,
+            )
+          : []
+      ),
       "",
       "📞 Available for:",
       "   - Project discussions",
@@ -299,6 +120,44 @@ const portfolioData = {
     description: "Professional Resume",
   },
 };
+
+// @ts-expect-error: This is a known issue with TypeScript and Next.js, where it doesn't recognize dynamic keys in an object.
+portfolioData["/about/developer.txt"] = {
+  type: "file",
+  content: [
+    `=== ${about.developer.title} ===`,
+    "",
+    about.developer.content?.join("\n"),
+  ],
+};
+
+// @ts-expect-error: This is a known issue with TypeScript and Next.js, where it doesn't recognize dynamic keys in an object.
+portfolioData["/about/philosophy.txt"] = {
+  type: "file",
+  content: [
+    `=== ${about.philosophy.title} ===`,
+    "",
+    about.philosophy.content?.join("\n"),
+  ],
+};
+
+projects.forEach((project) => {
+  const filePath = `/projects/${project.filename}`;
+  // @ts-expect-error: This is a known issue with TypeScript and Next.js, where it doesn't recognize dynamic keys in an object.
+  portfolioData[filePath] = {
+    type: "file",
+    content: [
+      `=== ${project.name} ===`,
+      "",
+      project.description,
+      "",
+      "Technologies Used:",
+      ...project.technologies.map((tech) => `- ${tech}`),
+      "",
+      project.metrics ? `Metrics: ${project.metrics}` : "",
+    ],
+  };
+});
 
 export default function Terminal() {
   const [currentPath, setCurrentPath] = useState("/");
@@ -483,7 +342,9 @@ export default function Terminal() {
             Miled&apos;s Portfolio Terminal v1.0
           </div>
         </div>
-        <div className="text-sm text-green-600">Type &apos;help&apos; for commands</div>
+        <div className="text-sm text-green-600">
+          Type &apos;help&apos; for commands
+        </div>
       </div>
 
       {/* Terminal */}

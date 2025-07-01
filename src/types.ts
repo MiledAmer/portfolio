@@ -10,6 +10,7 @@ export type PortfolioData = {
 
 export type Project = {
   name: string;
+  filename: string;
   description: string;
   technologies: string[];
   metrics?: string;
