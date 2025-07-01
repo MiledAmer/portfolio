@@ -1,4 +1,4 @@
-import { Desk } from "@/components/desk";
+import { FloatingObjects } from "@/components/floating-objects";
 import { Meteors } from "@/components/magicui/meteors";
 
 export default function HomePage() {
@@ -21,7 +21,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      <Desk />
+      <FloatingObjects />
     </div>
   );
 }
