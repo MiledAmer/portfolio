@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "Miled Ameur - Developer Portfolio",
   description:
     "Full-stack developer passionate about creating beautiful, functional web experiences.",
+  icons: [{ rel: "icon", url: "/rocket.png" }],
 };
 
 export default function RootLayout({
@@ -30,7 +31,7 @@ export default function RootLayout({
         >
           <Toaster position="top-right" />
           <Analytics />
-          
+
           {children}
         </ThemeProvider>
       </body>
