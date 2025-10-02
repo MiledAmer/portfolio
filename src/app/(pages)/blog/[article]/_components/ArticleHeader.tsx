@@ -16,7 +16,7 @@ export default function ArticleHeader({
       className={`relative h-[460px] w-full bg-cover bg-center bg-no-repeat xl:h-[537px]`}
       style={{ backgroundImage: `url(${backgroundImageUrl})` }}
     >
-      <div className="absolute top-20 left-1/2 mx-auto w-full max-w-screen-xl -translate-x-1/2 px-4 xl:top-1/2 xl:-translate-y-1/2 xl:px-0">
+      <div className="absolute top-20 left-1/2 mx-auto w-full max-w-screen-xl -translate-x-1/2 px-4 xl:top-1/2 xl:-translate-y-1/2 xl:px-0 ml-5">
         <span className="mb-4 block text-gray-300">
           Published in{" "}
           {categories.map((category) => (
