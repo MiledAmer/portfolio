@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { type Post } from "types/Post";
+import { type Post } from "@/types/Post";
 
 export default function ArticleCard({ post }: { post: Partial<Post> }) {
   return (

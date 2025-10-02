@@ -1,4 +1,3 @@
-import { format } from "date-fns";
 import Image from "next/image";
 import { type Post } from "@/types/Post";
 
@@ -19,15 +18,15 @@ export default function ArticleCard({ post }: { post: Partial<Post> }) {
           />
         </a>
       </div>
-      <h2 className="mb-2 md:text-xl font-bold leading-tight text-gray-900 dark:text-white">
+      <h2 className="mb-2 leading-tight font-bold text-gray-900 md:text-xl dark:text-white">
         <a href={`/blog/${post.slug}`}>{post.title}</a>
       </h2>
-      <p className="mb-4 line-clamp-3 text-sm md:text-base text-gray-500 dark:text-gray-400">
-       {post.description}
+      <p className="mb-4 line-clamp-3 text-sm text-gray-500 md:text-base dark:text-gray-400">
+        {post.description}
       </p>
       <a
         href={`/blog/${post.slug}`}
-        className="text-primary-600 text-sm md:text-base dark:text-primary-500 inline-flex items-center font-medium underline underline-offset-4 hover:no-underline"
+        className="text-primary-600 dark:text-primary-500 inline-flex items-center text-sm font-medium underline underline-offset-4 hover:no-underline md:text-base"
       >
         Read in {post.readTime} minutes
       </a>

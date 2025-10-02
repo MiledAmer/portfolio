@@ -8,22 +8,22 @@ import { ArrowLeft } from "lucide-react";
 export default async function Blog({
   searchParams,
 }: {
-  searchParams: { category: string };
+  searchParams: Promise<{ category: string }>;
 }) {
-  const category = searchParams.category ?? "";
+  const category = (await searchParams).category ?? "";
   const posts = (await getPostsWithoutDetails(category)) as Post[];
   const categories = await getCategories();
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto h-max">
       <div className="absolute top-6 left-6">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-violet-600 transition-colors duration-200 hover:text-violet-800 dark:text-violet-400 dark:hover:text-violet-200"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to Home
-          </Link>
-        </div>
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-violet-600 transition-colors duration-200 hover:text-violet-800 dark:text-violet-400 dark:hover:text-violet-200"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back to Home
+        </Link>
+      </div>
       <Hero />
       <h2 className="mb-6 text-center text-2xl font-bold sm:text-left">
         Latest Blog Posts

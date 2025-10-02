@@ -1,7 +1,5 @@
-import { format } from "date-fns";
-import { Post } from "types/Post";
+import { type Post } from "@/types/Post";
 import ArticleCard from "./ArticleSidebarCard";
-import { ArrowRight } from "lucide-react";
 
 export default async function ArticleSideBar({
   nextPost,
@@ -18,14 +16,14 @@ export default async function ArticleSideBar({
         </h3>
         {nextPost && (
           <div className="mb-8">
-            <h3 className="mb-4 flex items-center gap-2 text-sm font-bold uppercase text-gray-900 dark:text-white">
+            <h3 className="mb-4 flex items-center gap-2 text-sm font-bold text-gray-900 uppercase dark:text-white">
               Next Posts
             </h3>
             <ArticleCard post={nextPost} />
           </div>
         )}
         <div className="mb-12">
-          <h4 className="mb-4 text-sm font-bold uppercase text-gray-900 dark:text-white">
+          <h4 className="mb-4 text-sm font-bold text-gray-900 uppercase dark:text-white">
             Latest news
           </h4>
           <div className="flex flex-col gap-4">
@@ -34,7 +32,7 @@ export default async function ArticleSideBar({
             ))}
           </div>
         </div>
-        <div>
+        {/* <div>
           <a
             href="#"
             className="mb-3 flex h-48 w-full items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700"
@@ -56,10 +54,10 @@ export default async function ArticleSideBar({
           <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
             Students and Teachers, save up to 60% on Flowbite Creative Cloud.
           </p>
-          <p className="text-xs uppercase text-gray-400 dark:text-gray-500">
+          <p className="text-xs text-gray-400 uppercase dark:text-gray-500">
             Ads placeholder
           </p>
-        </div>
+        </div> */}
       </div>
     </aside>
   );

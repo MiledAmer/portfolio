@@ -5,8 +5,6 @@ import { type ImageValue, urlFor } from "@/sanity/sanity-utils";
 import Image from "next/image";
 import Link from "next/link";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
-
 export const ptComponents = {
   types: {
     image: ({ value }: { value: ImageValue }) => {

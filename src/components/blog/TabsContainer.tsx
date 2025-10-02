@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import { type Post } from "@/types/Post";
@@ -21,13 +21,12 @@ const TabsContainer = ({
     router.push(`?category=${category}`);
   };
   return (
-    <div className="container px-4 mx-auto" id="posts">
-      <div className="flex overflow-x-auto gap-4">
+    <div className="container mx-auto px-4" id="posts">
+      <div className="flex gap-4 overflow-x-auto">
         <Button
           variant="outline"
-          
           onClick={() => {
-            selectCategory("")
+            selectCategory("");
           }}
         >
           All
@@ -36,7 +35,9 @@ const TabsContainer = ({
           <Button
             key={category.slug}
             variant="outline"
-            className={currentCategory === category.slug ? "bg-primary text-white" : ""}
+            className={
+              currentCategory === category.slug ? "bg-primary text-white" : ""
+            }
             onClick={() => {
               selectCategory(category.slug);
             }}
@@ -44,15 +45,15 @@ const TabsContainer = ({
             {category.title}
           </Button>
         ))}
-      </div>    
-      {posts.length > 0 ? (
-      <div className="grid mt-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-4">
-        {posts.map((post) => (
-          <ArticleCard key={post.slug} post={post} />
-        )) }
       </div>
+      {posts.length > 0 ? (
+        <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
+          {posts.map((post) => (
+            <ArticleCard key={post.slug} post={post} />
+          ))}
+        </div>
       ) : (
-        <div className="text-center font-bold text-2xl w-full h-48 flex items-center justify-center  text-gray-500">
+        <div className="flex h-48 w-full items-center justify-center text-center text-2xl font-bold text-gray-500">
           {"No posts found :("}
         </div>
       )}
