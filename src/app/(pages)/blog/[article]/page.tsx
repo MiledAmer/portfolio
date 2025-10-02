@@ -3,12 +3,9 @@ import ArticleContent from "./_components/ArticleContent";
 import ArticleSideBar from "./_components/ArticleSideBar";
 import { getLatestPosts, getNextPost, getPost } from "@/sanity/sanity-utils";
 
-type propType = {
-  article: string;
-};
 
-export default async function HomePage({ params }: { params: propType }) {
-  const slug = params.article;
+export default async function HomePage({ params }: { params: Promise<{ article: string }> }) {
+  const slug = (await params).article;
   const data = await getPost(slug);
   const nextPost = await getNextPost(slug);
   const latestPosts = await getLatestPosts();
@@ -19,6 +16,7 @@ export default async function HomePage({ params }: { params: propType }) {
           title={data.title}
           backgroundImageUrl={data.mainImage}
           categories={data.categories}
+          description={data.description}
         />
         <div className="relative z-20 -m-36 mx-4 flex max-w-screen-xl justify-between rounded bg-white p-6 xl:-m-32 xl:mx-auto xl:p-9 dark:bg-gray-800">
           <ArticleContent data={data} />

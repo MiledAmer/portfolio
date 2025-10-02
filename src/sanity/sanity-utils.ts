@@ -49,7 +49,6 @@ export async function getPostsWithoutDetails(
     );
   }
 
-  // revalidatePath("/");
   return posts ?? [];
 }
 
