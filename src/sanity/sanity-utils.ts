@@ -49,7 +49,7 @@ export async function getPostsWithoutDetails(
     );
   }
 
-  revalidatePath("/");
+  // revalidatePath("/");
   return posts ?? [];
 }
 

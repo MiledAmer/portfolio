@@ -5,6 +5,18 @@
 import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+        pathname: "/**",
+      },
+      // If you want to restrict more tightly to your project dataset, use:
+      // { protocol: "https", hostname: "cdn.sanity.io", pathname: "/images/vijf8f2k/production/**" }
+    ],
+  },
+};
 
 export default config;
