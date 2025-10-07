@@ -2,8 +2,8 @@ import { type Post } from "@/types/Post";
 import { format } from "date-fns";
 import { PortableText } from "@portabletext/react";
 import { type ImageValue, urlFor } from "@/sanity/sanity-utils";
-import Image from "next/image";
 import Link from "next/link";
+import ImageModal from "./image-modal";
 
 export const ptComponents = {
   types: {
@@ -13,21 +13,11 @@ export const ptComponents = {
       }
 
       return (
-        <div className="relative my-6 h-96 w-full">
-          <Image
-            alt={value.alt ?? ""}
-            loading="lazy"
-            src={urlFor(value)
-              .width(800)
-              .height(384)
-              .fit("max")
-              .auto("format")
-              .url()}
-            fill
-            className="object-contain"
-            quality={90}
-          />
-        </div>
+        <ImageModal
+          src={urlFor(value).url()}
+          alt={value.alt ?? ""}
+          className="object-contain"
+        />
       );
     },
   },
