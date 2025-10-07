@@ -29,7 +29,7 @@ export default async function HomePage({ params }: { params: Promise<{ article: 
           categories={data.categories}
           description={data.description}
         />
-        <div className="relative z-20 -m-36 mx-4 flex max-w-screen-xl justify-between rounded bg-white p-6 xl:-m-32 xl:mx-auto xl:p-9 dark:bg-gray-800">
+        <div className="relative z-20 -m-36 mx-0 flex max-w-screen-xl justify-between rounded bg-white p-6 xl:-m-32 xl:mx-auto xl:p-9 dark:bg-gray-800">
           <ArticleContent data={data} />
           <ArticleSideBar nextPost={nextPost} latestPosts={latestPosts} />
         </div>

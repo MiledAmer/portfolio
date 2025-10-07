@@ -40,7 +40,7 @@ export const ptComponents = {
       </blockquote>
     ),
     normal: ({ children }: { children: React.ReactNode }) => (
-      <p className="my-4 leading-7">{children}</p>
+      <p className="my-4 leading-7 text-justify">{children}</p>
     ),
   },
   list: {
