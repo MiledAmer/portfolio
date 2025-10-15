@@ -1,6 +1,6 @@
 import { DocumentTextIcon } from "@sanity/icons";
 import { defineArrayMember, defineField, defineType } from "sanity";
-import { SquareFunction } from 'lucide-react';
+import { SquareFunction } from "lucide-react";
 
 export const postType = defineType({
   name: "post",
@@ -77,7 +77,17 @@ export const postType = defineType({
             ],
           },
         },
-        { type: "image" },
+        {
+          name: "image",
+          type: "image",
+          fields: [
+            {
+              name: "alt",
+              type: "string",
+              title: "Alternative text",
+            },
+          ],
+        },
       ],
     }),
   ],
