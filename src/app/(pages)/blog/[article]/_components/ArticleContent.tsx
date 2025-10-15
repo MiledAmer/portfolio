@@ -4,6 +4,7 @@ import { PortableText } from "@portabletext/react";
 import { type ImageValue, urlFor } from "@/sanity/sanity-utils";
 import Link from "next/link";
 import ImageModal from "./image-modal";
+import MathFormula from "./MathFormula";
 
 export const ptComponents = {
   types: {
@@ -40,7 +41,7 @@ export const ptComponents = {
       </blockquote>
     ),
     normal: ({ children }: { children: React.ReactNode }) => (
-      <p className="my-4 leading-7 text-justify">{children}</p>
+      <p className="my-4 text-justify leading-7">{children}</p>
     ),
   },
   list: {
@@ -60,6 +61,14 @@ export const ptComponents = {
     em: ({ children }: { children: React.ReactNode }) => (
       <em className="italic">{children}</em>
     ),
+    formula: ({ children }: { children: React.ReactNode }) => {
+      const text = Array.isArray(children)
+        ? children.join("")
+        : typeof children === "string"
+          ? children
+          : "";
+      return <MathFormula formula={text} />;
+    },
     link: ({
       children,
       value,

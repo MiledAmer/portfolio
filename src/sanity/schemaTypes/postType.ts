@@ -1,5 +1,6 @@
 import { DocumentTextIcon } from "@sanity/icons";
 import { defineArrayMember, defineField, defineType } from "sanity";
+import { SquareFunction } from 'lucide-react';
 
 export const postType = defineType({
   name: "post",
@@ -56,7 +57,28 @@ export const postType = defineType({
     }),
     defineField({
       name: "body",
-      type: "blockContent",
+      title: "Block Content",
+      type: "array",
+      of: [
+        {
+          type: "block",
+          marks: {
+            decorators: [
+              { title: "Strong", value: "strong" },
+              { title: "Emphasis", value: "em" },
+              { title: "Code", value: "code" },
+              { title: "Underline", value: "underline" },
+              { title: "Strike", value: "strike-through" },
+              {
+                title: "Formula",
+                value: "formula",
+                icon: SquareFunction,
+              },
+            ],
+          },
+        },
+        { type: "image" },
+      ],
     }),
   ],
   preview: {

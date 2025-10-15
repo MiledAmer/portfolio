@@ -3,7 +3,6 @@ import { type Post } from "@/types/Post";
 import { client } from "@/sanity/lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { type ImageUrlBuilder } from "sanity";
-import { revalidatePath } from "next/cache";
 import { type Category } from "@/types/Category";
 import { type Contact } from "@/types/Contact";
 
